@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화장품검색</title>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/4900c1e8e8.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        h1{
+            margin-top: 0;
+            padding-top: 0.6em;
+        }
+
+        .green{
+            color: #89c03f;
+            font-weight: 700;}
+
+        #searche{
+            height: 644px;
+            background-image: url(https://kcia.or.kr/cid/img/main/slide_01.jpg);
+            background-position: center center;
+        }
+
+        #searche_box{
+            height: 56px;
+            width: 650px;
+            border: 7px solid #89c03f;
+            background: #fff;
+            margin: 0 auto;
+            
+        }
+        button{
+            width: 56px;
+            height: 56px;
+
+        }
+        #불러오기{
+            background: url("https://kcia.or.kr/cid/img/icon/visual_search.png") no-repeat center center;
+            border: 0;
+        }
+        
+        #input_searche_value{
+            width: 50%;
+            height: 54px;
+            font-size: 1em;
+            color: #000000;
+            font-weight: 500;
+            border-width: 0;
+            box-sizing: border-box;
+        }
+        #select_type{
+            border: 0;
+            border-right: 3px solid #89c03f;
+            width: 143px;
+            height: 30px;
+            font-size: 1em;
+            font-weight: 700;
+        }
+
+        td:first-child{width:150px;}
+        td:nth-child(5){width:700px;}
+        td:nth-child(6){width:150px;}
+
+
+    </style>
+
+</head>
+<body>
+
+    <!--최상단 네이게이션바-->
+    <nav class="navber">
+        <div class="navber_logo">
+
+            <!--사이트 대표 로고-->
+            <a href="/index"><i class="fa-solid fa-magnifying-glass"></i>화장품검색</a>
+        </div>
+
+        <!--사이트 이동 메뉴-->
+        <ul class="navber_menu">
+            <li><a href="/search">화장품검색</a></li>
+            <li><a href="/savelist">저장목록</a></li>
+            <li><a href="/analyze">트렌드분석</a></li>
+            <li><a href="/extraction">상품훔쳐오기</a></li>   
+        </ul>
+
+        <!--로그인 회원가입 메뉴-->
+        <ul id="user_menu">
+            <li><a href="https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/login">로그인</a></li>
+            <li><a href="https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/register">회원가입</a></li>
+        </ul>
+
+    </nav>
+
+    <!--검색 조건 및 검색 실행 영역-->
+    <header> 
+        <div id="searche">
+            <h1>화장품 검색</h1>
+
+                <div id="searche_box"> 
+
+                        <!--검색페이지로 이동-->
+                        <form action="/search" method="get">
+
+                            <!--검색 인덱스 조건 선택-->
+                            <select id="select_type" name="condition"> 
+                                <option>품명</option>
+                                <option>제작회사</option>
+                                <option>종류</option>
+                                <option>성분</option>
+                            </select>
+
+                            <!--검색값 입력-->
+                            <input type="text" id="input_searche_value" placeholder="검색어를 입력하시오." name="input">
+
+                            <!--검색 실행-->
+                            <button id="불러오기">.</button>
+                        </form>
+                </div>
+        </div>
+    </header>
+
+
+    <footer>
+        <div class="footer-inner">
+            <p>CPA</p>
+            <div class="footer-address">
+                <span>서울특별시 서초구 서초대로 396, 19층(서초동, 강남빌딩)</span>
+                <span class="footer-before">사업자등록번호  </span><span class="footer-address-desc-num">111-11-11111</span>
+            <div class="footer-contents">
+                <span class="footer-contents-list">대표  </span><span class="footer-after">이도현</span>
+                <span class="footer-contents-list">대표번호  </span><span class="footer-after">010-3776-3769</span>
+            </div>
+        
+            <!--SNS 사이트 이동 메뉴-->
+        <ul class="footer-links"> 
+            <li><a href="https://twitter.com/?lang=ko" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://www.naver.com//" target="_blank"><i class="fa-brands fa-korvue"></i></a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const qwe= getCookie('login');
+        if(qwe!==null){
+            document.getElementById('user_menu').innerHTML = `<li><button onclick="logout()">${qwe}님 로그아웃</button></li>`;
+        }
+    </script>
+
+</body>
+</html>
