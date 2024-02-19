@@ -225,7 +225,7 @@ app.post('/login/req',(req,res)=>{
               
           }else if(rows[0].password===hash(ps)){
               res.cookie('login', rows[0].userid,{maxAge : 100*1000});
-              res.send({res : '로그인 성공'})
+              res.redirect('https://web-cpaserviceindex-dc9c2nlss8snjp.sel5.cloudtype.app/')
               // res.status(200)  //////////////////////////////////////////////////////////////수정필요
 
           }else{
