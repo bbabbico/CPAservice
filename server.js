@@ -61,7 +61,9 @@ connection.connect();
 var browser
 async function scrapeData(url,type) {
   try {
-    browser = await puppeteer.launch({headless: false,});
+    const browser = await puppeteer.launch({ //배포용 서버 전용
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     const page = await browser.newPage();
     await page.goto(url);
     
