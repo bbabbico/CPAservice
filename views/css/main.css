@@ -2,14 +2,13 @@
 /*페이지 레이아웃 기본설정*/
 body{
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 header{text-align: center;}
 
 a{
     text-decoration: none;
-    color:white;
 }
 
 /*아이콘*/
@@ -22,12 +21,13 @@ i{font-size : 30px }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:darkblue;
+    background-color: #f2f2f2;
     padding: 8px 12px;
 }
 
 .navber_logo{
     font-size: 24px;
+    color: #333;
 }
 
 .navber_menu{
@@ -37,10 +37,16 @@ i{font-size : 30px }
 
 .navber_menu li{
     padding: 8px 12px;
+
+}
+
+.navber_menu li a {
+    color: #333;
+    font-weight: bold;
 }
 
 .navber_menu li:hover{
-    background-color: blue;
+    background-color: #ddd;
     border-radius: 4px;
 }
 
@@ -51,10 +57,12 @@ i{font-size : 30px }
 
 #user_menu li a{
     padding: 8px 12px;
+    color: #333;
+    font-weight: bold;
 }
 
 #user_menu li a:hover{
-    background-color: blue;
+    background-color: #ddd;
     border-radius: 4px;
 }
 
@@ -64,7 +72,7 @@ i{font-size : 30px }
 }
 
 #user_menu li button:hover{
-    background-color: blue;
+    background-color: #ddd;
     border-radius: 4px;
 }
 
@@ -75,6 +83,7 @@ footer{
     padding: 40px 30px;
     height: 10rem;
     width: 100%;
+    bottom: 0;
 }
 
 .footer-before::before{
@@ -117,6 +126,7 @@ footer{
 }
 
 /*검색 테이블*/
+
 table {
     margin-left:auto; 
     margin-right:auto;
@@ -131,6 +141,10 @@ table ,tr,td{
 .green{
     color: #89c03f;
     font-weight: 700;}
+
+section p{
+    text-align: center;
+}
 
 section p{
     text-align: center;
