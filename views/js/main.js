@@ -28,7 +28,7 @@ function 검색(select_type,input_searche_value){
                 <td>${elem.type}</td>
                 <td>${elem.ingredient}</td>
                 <td id='${elem.name}'>
-                    <button id="저장소에추가" onclick="add_user('${elem.link_url}','${elem.link_img}','${elem.name}','${elem.brand}','${elem.type}','${elem.ingredient}')">
+                    <button id="저장소에추가" onclick="add_user('${p}','${elem.link_url}','${elem.link_img}','${elem.name}','${elem.brand}','${elem.type}','${elem.ingredient}')">
                     ${p}님의 저장소에 추가</button></td>
             </tr>`;
         })).then( (HTML)=> {
