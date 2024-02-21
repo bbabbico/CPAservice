@@ -4,9 +4,8 @@ WORKDIR /app
 COPY package*.json ./ 
 RUN npm ci --only=production
 
-RUN apk update
-RUN apk upgrade
-RUN apk add --no-cache udev ttf-freefont chromium
+RUN apt update
+RUN apk install chromium -y
 
 # RUN sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
 # RUN sudo apt-get install libgconf-2-4 libnss3 libxss1
