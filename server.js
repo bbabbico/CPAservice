@@ -61,7 +61,7 @@ connection.connect();
 var browser
 async function scrapeData(url,type) {
   try {
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
     executablePath: '/usr/bin/google-chrome',
     args: [...]
     });
