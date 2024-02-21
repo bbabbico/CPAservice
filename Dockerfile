@@ -1,5 +1,6 @@
 FROM node:20-buster
 COPY package*.json ./ 
+WORKDIR /app
 
 RUN npm ci --only=production
 
