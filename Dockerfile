@@ -17,4 +17,4 @@ ENV NODE_ENV production
 USER node
 
 EXPOSE 3000
-CMD ["npm", "server.js"]
+CMD ["npm", "start"]
