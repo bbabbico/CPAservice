@@ -91,7 +91,7 @@
         }
 
         function API(){
-            fetch("https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/login/req", {
+            fetch("https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/login/req", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,7 +106,7 @@
             .then((data) => {
                 document.getElementById('res').innerHTML=data.res
                 if(data.res==='로그인 성공'){
-                    location.href='https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/index';
+                    location.href='https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/index';
                 } });
         }
     </script>
