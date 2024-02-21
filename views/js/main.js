@@ -11,7 +11,7 @@ function 검색(select_type,input_searche_value){
     // 검색 fetch 요청 보내고 목록받기 (회원)
     const p =getCookie('login');
     if(p!==null){
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/s?condition=${select_type}&input=${input_searche_value}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/s?condition=${select_type}&input=${input_searche_value}`)
     .then((response)=>response.json())
     .then((data) => 
     data.forEach(elem => {
@@ -43,7 +43,7 @@ function 검색(select_type,input_searche_value){
     else
     {
         // 검색 fetch 요청 보내고 목록받기 (비회원)
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/s?condition=${select_type}&input=${input_searche_value}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/s?condition=${select_type}&input=${input_searche_value}`)
     .then((response)=>response.json())
     .then((data) => 
     data.forEach(elem => {
@@ -99,7 +99,7 @@ function add(link_url, link_img, name, brand, type, ingredient){
     const user_id = getCookie('login');
 
     // 저장 fetch 요청 보내기 ----------------------
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/add?userid=${user_id}&link_url=${link_url}&link_img=${link_img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/add?userid=${user_id}&link_url=${link_url}&link_img=${link_img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
     .then(function() {document.getElementById(`${name}`).innerHTML =`${user_id}에 저장완료`;});
 }
 
@@ -110,7 +110,7 @@ function del(userid,name){
     temp.remove();
 
     // 항목삭제 fetch 전송
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/del?userid=${userid}&name=${name}`) 
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/del?userid=${userid}&name=${name}`) 
     .catch((error) =>
         document.querySelector("#container").innerHTML += `
         <tr>
@@ -125,7 +125,7 @@ function load(){
     const p = getCookie('login');
 
     // 불러오기 fetch 전송
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/load/${p}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/load/${p}`)
     .then((response)=>response.json())
     .then((data) => data.forEach(elem => {  
        document.querySelector("#container").innerHTML += `
@@ -164,7 +164,7 @@ function crawlingadd(url, img, name, brand, type, ingredient){ /////////////////
     // user_id = document.getElementById(`${name}_input_userid`).value;
 
     // 저장 fetch 요청 보내기 ----------------------
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/crawlingadd?url=${url}&img=${img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/crawlingadd?url=${url}&img=${img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
     .then(function() {document.getElementById(`${name}`).innerHTML =`에 저장완료`;});
 }
 
@@ -176,7 +176,7 @@ function 크롤링(url,type){ //////////////////////////////////////////////////
     url=url.replaceAll('?','___mool___');
 
     // 불러오기 fetch 전송
-    fetch(`https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/crawling?url=${url}&type=${type}`)
+    fetch(`https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/crawling?url=${url}&type=${type}`)
     .then((response)=>response.json())
     .then((elem) => {
         document.querySelector("#container tbody").innerHTML += `
@@ -217,8 +217,8 @@ function logout(){
     
     .then((logo)=>{
         document.getElementById('user_menu').innerHTML = `
-        <li><a href="https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/login">로그인</a></li>
-        <li><a href="https://port-0-cpaservice-dc9c2nlss8snjp.sel5.cloudtype.app/register">회원가입</a></li>`;
+        <li><a href="https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/login">로그인</a></li>
+        <li><a href="https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/register">회원가입</a></li>`;
         alert('로그아웃됨');
     })
 }
