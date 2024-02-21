@@ -62,7 +62,7 @@ var browser
 async function scrapeData(url,type) {
   try {
     browser = await puppeteer.launch({
-    executablePath: '/usr/bin/google-chrome',
+    executablePath: '/usr/bin/chromium-browser',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     const page = await browser.newPage();
