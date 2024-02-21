@@ -267,5 +267,5 @@ app.get('/logout', (req, res) => {
   res.send({res : '로그아웃'})
 });
 
-app.listen(5000);
-console.log('Server is listening on port 5000');
+app.listen(3000);
+console.log('Server is listening on port 3000');
