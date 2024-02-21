@@ -66,7 +66,7 @@ async function scrapeData(url,type) {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true,});
     const page = await browser.newPage();
-    await page.goto(url);
+    await page.goto(url,{timeout: 70000});
     
     await page.waitForSelector('.goods_buyinfo'); // 클릭할 버튼이 로드 될 때까지 Wait
     await page.click('.goods_buyinfo'); // 썸네일 버튼 클릭
