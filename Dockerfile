@@ -4,8 +4,13 @@ WORKDIR /app
 COPY package*.json ./ 
 RUN npm ci --only=production
 
-RUN apt update
-RUN apt install chromium -y
+
+RUN apt-get update && apt-get install curl gnupg -y \
+  && curl --location --silent https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+  && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+  && apt-get update \
+  && apt-get install google-chrome-stable -y --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/*
 
 # RUN sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
 # RUN sudo apt-get install libgconf-2-4 libnss3 libxss1
