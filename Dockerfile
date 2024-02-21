@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 RUN apt update
-RUN apk install chromium -y
+RUN apt install chromium -y
 
 # RUN sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
 # RUN sudo apt-get install libgconf-2-4 libnss3 libxss1
