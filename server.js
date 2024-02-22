@@ -162,8 +162,8 @@ app.get('/add_user',function (req,res) {
   link_img=link_img.replaceAll('___dot___','.')
 
   connection.query(`insert into usersave values('${temp.userid}','${link_url}','${link_img}','${temp.name}','${temp.brand}','${temp.type}','${temp.ingredient}');`, (error, rows, fields) => {
-    if (error) {res.json({'res' : '이미있다'});};
-    res.json({'res' : 'q' })
+    if (error) {res.json({'res' : '이미있다'}); return;};
+    res.json({'res' : 'q' });
   });
 
   // connection.end();
@@ -184,8 +184,8 @@ app.get('/add_nouser',function (req,res) { /////////////////////////////////////
   img=img.replaceAll('___dot___','.')
 
   connection.query(`insert into qqq values('${url}','${img}','${temp.name}','${temp.brand}','${temp.type}','${temp.ingredient}');`, (error, rows, fields) => {
-    if (error){res.json({'res' : '이미있다'});};
-    res.json({'res' : 'q' })
+    if (error){res.json({'res' : '이미있다'}); return;};
+    res.json({'res' : 'q' });
   });
   // connection.end();
 })
