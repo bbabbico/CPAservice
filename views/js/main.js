@@ -175,7 +175,7 @@ function add_nouser(url, img, name, brand, type, ingredient){
     img=img.replaceAll('.','___dot___');
 
     // 저장 fetch 요청 보내기 
-    fetch(`${main_url}add_nouser?&url=${url}&img=${img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
+    fetch(`${main_url}add_nouser?url=${url}&img=${img}&name=${name}&brand=${brand}&type=${type}&ingredient=${ingredient}`)
     .then((response)=>response.json())
     .then((data)=> {
         if(data.res==='이미있다'){
