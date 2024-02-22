@@ -1,5 +1,5 @@
 //메인 서버 주소
-const main_url ='http://localhost:5000/';
+const main_url ='https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/';
 //https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/
 //http://localhost:5000/
 
