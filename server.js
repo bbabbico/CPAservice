@@ -163,7 +163,7 @@ app.get('/add_user',function (req,res) {
 
   connection.query(`insert into usersave values('${temp.userid}','${link_url}','${link_img}','${temp.name}','${temp.brand}','${temp.type}','${temp.ingredient}');`, (error, rows, fields) => {
     if (error) {res.json({'res' : '이미있다'});};
-    res.json(rows)
+    res.json({'res' : 'q' })
   });
 
   // connection.end();
@@ -196,7 +196,7 @@ app.get('/load/:id',function (req,res) {
   const temp = req.params
   connection.query('SELECT * from usersave where userid like '+"'"+temp.id+"';", (error, rows, fields) => {
     if (error) throw error;
-    res.json({'res' : 'q' })
+    res.json(rows)
     });
   // connection.end();
 })
