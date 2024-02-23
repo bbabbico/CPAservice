@@ -1,8 +1,21 @@
+//////////////////////////////////////////////////////////////////////// 기본 설정
 //메인 서버 주소
 const main_url ='https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/';
 //https://port-0-cpaservicereal-dc9c2nlss8snjp.sel5.cloudtype.app/
 //http://localhost:5000/
 
+//로그인 확인
+function login_check() {
+    document.getElementById('login').href=`${main_url}login`;
+    document.getElementById('register').href=`${main_url}register`;
+    const qwe= getCookie('login');
+        if(qwe!==null){
+            document.getElementById('user_menu').innerHTML = `<li><button onclick="logout()">${qwe}님 로그아웃</button></li>`;
+        }
+        return qwe;
+    }
+
+//////////////////////////////////////////////////////////////////////// 주요 함수
 function 검색(select_type,input_searche_value){
     //결과 초기화
     const table = document.getElementById('container');
