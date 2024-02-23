@@ -92,14 +92,11 @@
         </footer>
 
     <script>
-        const qwe= getCookie('login');
+        qwe = login_check()
         if(qwe!==null){
             document.getElementById('user').innerHTML = `<strong>${qwe}</strong>님의 저장 목록`
             document.getElementById('user_menu').innerHTML = `<li><button onclick="logout()">${qwe}님 로그아웃</button></li>`;
         }
-
-        document.getElementById('login').href=`${main_url}login`;
-        document.getElementById('register').href=`${main_url}register`;
     </script>
 
 </body>
