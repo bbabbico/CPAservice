@@ -125,19 +125,11 @@
 
 
     <script>
-        const qwe= getCookie('login');
-        if(qwe!==null){
-            document.getElementById('user_menu').innerHTML = `<li><button onclick="logout()">${qwe}님 로그아웃</button></li>`;
-        }
-    
+        login_check();
         var button = document.getElementById('crawling');
         button.addEventListener('click',()=>{
             크롤링(document.getElementById('input_url_value').value ,document.getElementById('select_type').value);
         })
-
-        document.getElementById('login').href=`${main_url}login`;
-        document.getElementById('register').href=`${main_url}register`;
-
     </script>
 </body>
 </html>
