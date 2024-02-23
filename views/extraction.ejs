@@ -12,6 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
+        #main{
+            height: 250px;
+            width: 1000px;
+            background-image: url(./img/extraction_main.jpg);
+            margin: 0 auto;
+            text-align: center;
+            background-position: center center;
+            background-size: contain;
+        }
+
+        #main h1{
+            color: aliceblue;
+        }
         #searche_box{
             height: 56px;
             width: 500px;
@@ -64,23 +77,27 @@
         </ul>
     </nav>
     
-    <div id="searche_box">
-        <select id="select_type"> 
-            <option>토너</option>
-            <option>미스트</option>
-            <option>에센스</option>
-            <option>세럼</option>
-            <option>앰플</option>
-            <option>로션</option>
-            <option>크림</option>
-            <option>클렌저</option>
-            <option>샴푸</option>
-            <option>린스</option>
-            <option>트리트먼트</option>
-        </select>
+    <div id="main">
+        <h1>훔치기</h1>
+    
+        <div id="searche_box">
+            <select id="select_type"> 
+                <option>토너</option>
+                <option>미스트</option>
+                <option>에센스</option>
+                <option>세럼</option>
+                <option>앰플</option>
+                <option>로션</option>
+                <option>크림</option>
+                <option>클렌저</option>
+                <option>샴푸</option>
+                <option>린스</option>
+                <option>트리트먼트</option>
+            </select>
 
-        <input type="text" id="input_url_value" placeholder="주소를 입력하시오.">
-        <button id="crawling">.</button>
+            <input type="text" id="input_url_value" placeholder="주소를 입력하시오.">
+            <button id="crawling">.</button>
+        </div>
     </div>
 
     <section> 
