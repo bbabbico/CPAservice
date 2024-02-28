@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 
     <style>
+        h1{
+            margin-top: 0;
+            padding-top: 0.6em;
+        }
+
         #main{
             height: 250px;
             width: 1000px;
@@ -76,29 +81,31 @@
             <li><a href='.' id="register">회원가입</a></li>
         </ul>
     </nav>
-    
-    <div id="main">
-        <h1>훔치기</h1>
-    
-        <div id="searche_box">
-            <select id="select_type"> 
-                <option>토너</option>
-                <option>미스트</option>
-                <option>에센스</option>
-                <option>세럼</option>
-                <option>앰플</option>
-                <option>로션</option>
-                <option>크림</option>
-                <option>클렌저</option>
-                <option>샴푸</option>
-                <option>린스</option>
-                <option>트리트먼트</option>
-            </select>
 
-            <input type="text" id="input_url_value" placeholder="주소를 입력하시오.">
-            <button id="crawling">.</button>
+    <header>
+        <div id="main">
+            <h1>훔치기</h1>
+        
+            <div id="searche_box">
+                <select id="select_type"> 
+                    <option>토너</option>
+                    <option>미스트</option>
+                    <option>에센스</option>
+                    <option>세럼</option>
+                    <option>앰플</option>
+                    <option>로션</option>
+                    <option>크림</option>
+                    <option>클렌저</option>
+                    <option>샴푸</option>
+                    <option>린스</option>
+                    <option>트리트먼트</option>
+                </select>
+
+                <input type="text" id="input_url_value" placeholder="주소를 입력하시오.">
+                <button id="crawling">.</button>
+            </div>
         </div>
-    </div>
+    </header>
 
     <section> 
         <p id="count"></p>
