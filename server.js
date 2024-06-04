@@ -50,7 +50,7 @@ app.get('/savelist', (req, res) => {
 
 // sql 연결
 const connection = mysql.createConnection({
-  host     : '222.235.231.198',
+  host     : 'svc.sel5.cloudtype.app',
   user     : 'newuser',
   password : '(ehgus2003)',
   database : 'solodb'
