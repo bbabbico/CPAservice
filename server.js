@@ -64,7 +64,18 @@ async function scrapeData(url,type) {
   try {
     browser = await puppeteer.launch(
       {executablePath: '/usr/bin/google-chrome',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+       args: [
+        '--disable-gpu',
+        '--disable-dev-shm-usage',
+        '--disable-setuid-sandbox',
+        '--no-first-run',
+        '--no-sandbox',
+        '--no-zygote',
+        '--deterministic-fetch',
+        '--disable-features=IsolateOrigins',
+        '--disable-site-isolation-trials',
+        // '--single-process',
+    ],
     headless: true,});
     const page = await browser.newPage();
     await page.goto(url, {waitUntil: 'load', timeout: 0});
