@@ -69,9 +69,9 @@ async function scrapeData(url,type) {
     const page = await browser.newPage();
     await page.goto(url, {waitUntil: 'load', timeout: 0});
     
-    await page.waitForSelector('.goods_buyinfo',{waitUntil: 'load', timeout: 50000}); // 클릭할 버튼이 로드 될 때까지 Wait
+    await page.waitForSelector('.goods_buyinfo'); // 클릭할 버튼이 로드 될 때까지 Wait
     await page.click('.goods_buyinfo'); // 썸네일 버튼 클릭
-    await page.waitForSelector('#artcInfo .detail_info_list',{waitUntil: 'load', timeout: 50000}); //텍스트 로딩 기다리기
+    await page.waitForSelector('#artcInfo .detail_info_list'); //텍스트 로딩 기다리기
 
     //상품정보 크롤링
     const infor = await page.evaluate(() => {
