@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install curl gnupg -y \
 
 # RUN sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
 # RUN sudo apt-get install libgconf-2-4 libnss3 libxss1
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 ENV NODE_ENV production
 
 COPY . .
@@ -23,4 +23,4 @@ COPY . .
 USER node
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD Xvfb :99 -screen 0 1024x768x16 -ac & node dist/src/main.js
