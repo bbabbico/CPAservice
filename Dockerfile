@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install curl gnupg -y \
 
 # RUN sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev
 # RUN sudo apt-get install libgconf-2-4 libnss3 libxss1
-
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 ENV NODE_ENV production
 
 COPY . .
