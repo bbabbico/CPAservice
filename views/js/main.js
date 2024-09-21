@@ -34,7 +34,7 @@ function 검색(select_type,input_searche_value){
     data.forEach(elem => {
         document.querySelector("#container tbody").innerHTML += `
             <tr class='del'>
-                <td><a href="${elem.link_url}" target="_blank"><img src="${elem.link_img}" width="150" height="150" alt="이미지 없다 시발아"><a></td>
+                <td><a href="${elem.link_url}" target="_blank"><img src="${elem.link_img}" width="150" height="150" alt="이미지 없음."><a></td>
                 <td>${elem.name}</td>
                 <td>${elem.brand}</td>
                 <td>${elem.type}</td>
