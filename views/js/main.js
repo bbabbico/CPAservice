@@ -15,6 +15,22 @@ function login_check() {
     }
 
 //////////////////////////////////////////////////////////////////////// 주요 함수
+function toggleImg(url,img_num) {  //이미지 변경 함수
+    main_url =document.getElementById(img_num).src
+    arr = Object.keys(url) //arr에 오브젝트 키값 모두 저장
+    cur_length = arr.indexOf(getKeyByValue(url,main_url)) //arr 키값중, url에 있는 값과 main_url 값과 일치하는 키값의, 인덱스 번호 추출
+    let last_url = url[arr[cur_length+1]]
+    if (last_url == undefined){
+        cur_length = 0
+        last_url = url.a1
+    }
+    document.getElementById(`${img_num}`).src = `${last_url}`;
+}
+
+function getKeyByValue(obj, value) {  //오브젝트의 값으로 키를 찾는 함수
+return Object.keys(obj).find(key => obj[key] === value);
+}
+
 function 검색(select_type,input_searche_value){
     //결과 초기화
     const table = document.getElementById('container');
