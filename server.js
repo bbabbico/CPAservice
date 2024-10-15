@@ -56,7 +56,7 @@ const connection = mysql.createConnection({
   password : '(ehgus2003)',
   database : 'solodb'
 });
-//connection.connect();
+connection.connect();
 
 //chrome 브라우저 크롤링 함수
 var browser
