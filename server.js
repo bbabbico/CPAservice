@@ -102,7 +102,7 @@ async function scrapeData(url,type) {
       return infor
     });
     if (infor.length===0){
-      console.log('좆됨')
+      console.log('크롤링 오류 500')
     }
     await browser.close();
 
@@ -174,7 +174,7 @@ app.get('/add_user',function (req,res) {
   link_img=link_img.replaceAll('___dot___','.')
 
   connection.query(`insert into usersave values('${temp.userid}','${link_url}','${link_img}','${temp.name}','${temp.brand}','${temp.type}','${temp.ingredient}');`, (error, rows, fields) => {
-    if (error) {res.json({'res' : '이미있다'}); return;};
+    if (error) {res.json({'res' : '이미 존재하는 데이터입니다.'}); return;};
     res.json({'res' : 'q' });
   });
 
@@ -196,7 +196,7 @@ app.get('/add_nouser',function (req,res) { /////////////////////////////////////
   img=img.replaceAll('___dot___','.')
 
   connection.query(`insert into qqq values('${url}','${img}','${temp.name}','${temp.brand}','${temp.type}','${temp.ingredient}');`, (error, rows, fields) => {
-    if (error){res.json({'res' : '이미있다'}); return;};
+    if (error){res.json({'res' : '이미 존재하는 데이터입니다.'}); return;};
     res.json({'res' : 'q' });
   });
   // connection.end();
@@ -287,3 +287,4 @@ app.get('/logout', (req, res) => {
 
 app.listen(5000);
 console.log('Server is listening on port 5000');
+
